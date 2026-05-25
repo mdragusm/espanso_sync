@@ -29,3 +29,5 @@ matches:
   replace: estoy guapo
 - trigger: popo
   replace: popois
+- trigger: mami
+  replace: laura
