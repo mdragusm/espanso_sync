@@ -1,0 +1,25 @@
+matches:
+- trigger: mdm
+  replace: Marcelo Dragustinovis Manautou
+- trigger: dircasa
+  replace: Antiguo Camino a Villa de Santiago
+- trigger: '@per'
+  replace: mdragus64@gmail.com
+- trigger: '@pro'
+  replace: marcelodragustinovism@gmail.com
+- trigger: '@lav'
+  replace: lavanderiaspinclean@gmail.com
+- trigger: dirlav
+  replace: Prolongracion Ruiz Cortines 1402
+- trigger: numcel
+  replace: '8122012861'
+- trigger: vlp
+  replace: Villa Los Pinos
+- trigger: mty
+  replace: Monterrey
+- trigger: lemg
+  replace: Laura Elena Manautou Galvan
+- trigger: CURP
+  replace: DAMM021224HTSRNRA2
+- trigger: RFC
+  replace: DAMM021224DK0
