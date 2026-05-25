@@ -23,17 +23,3 @@ matches:
   replace: DAMM021224HTSRNRA2
 - trigger: RFC
   replace: DAMM021224DK0
-- trigger: 7L
-  replace: DRAGMAR
-- trigger: test
-  replace: estoy guapo
-- trigger: popo
-  replace: popois
-- trigger: mami
-  replace: laura
-- trigger: wikend
-  replace: The Weeknd
-- trigger: jomofis
-  replace: home office
-- trigger: jomofis
-  replace: home office
