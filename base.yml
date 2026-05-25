@@ -20,6 +20,6 @@ matches:
 - trigger: lemg
   replace: Laura Elena Manautou Galvan
 - trigger: CURP
-  replace: este no es mi curp
+  replace: DAMM021224HTSRNRA2
 - trigger: RFC
   replace: DAMM021224DK0
