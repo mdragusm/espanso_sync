@@ -2,7 +2,7 @@ matches:
 - trigger: mdm
   replace: Marcelo Dragustinovis Manautou
 - trigger: dircasa
-  replace: Antiguo Camino a Villa de Santiago 3529
+  replace: Antiguo Camino a Villa de Santiag
 - trigger: '@per'
   replace: mdragus64@gmail.com
 - trigger: '@pro'
