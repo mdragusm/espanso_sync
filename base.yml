@@ -27,3 +27,5 @@ matches:
   replace: DRAGMAR
 - trigger: test
   replace: estoy guapo
+- trigger: popo
+  replace: popois
