@@ -31,3 +31,5 @@ matches:
   replace: popois
 - trigger: mami
   replace: laura
+- trigger: wikend
+  replace: The Weeknd
