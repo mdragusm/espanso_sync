@@ -33,3 +33,5 @@ matches:
   replace: laura
 - trigger: wikend
   replace: The Weeknd
+- trigger: jomofis
+  replace: home office
