@@ -25,3 +25,5 @@ matches:
   replace: DAMM021224DK0
 - trigger: prueba
   replace: hola
+- trigger: mami
+  replace: laura
