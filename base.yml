@@ -23,3 +23,5 @@ matches:
   replace: DAMM021224HTSRNRA2
 - trigger: RFC
   replace: DAMM021224DK0
+- trigger: casa2
+  replace: Antiguo Camino a Villa de Santiago 3529
