@@ -27,5 +27,3 @@ matches:
   replace: hola
 - trigger: prueba
   replace: hgola
-- trigger: prueba
-  replace: hgola
