@@ -5,6 +5,9 @@ import subprocess
 import os
 import threading
 import re
+import platform
+
+IS_WINDOWS = platform.system() == "Windows"
 
 DOTFILES_PATH = os.path.expanduser("~/dotfiles/base.yml")
 
@@ -26,7 +29,8 @@ def save_snippets(snippets):
     lines = ["matches:\n"]
     for trigger, replace in snippets:
         lines.append(f"- trigger: {trigger}\n  replace: {replace}\n")
-    with open(DOTFILES_PATH, "w") as f:
+    real_path = os.path.realpath(DOTFILES_PATH)
+    with open(real_path, "w") as f:
         f.writelines(lines)
 
 # ── Git helpers ──────────────────────────────────────────────────────────────
@@ -45,13 +49,16 @@ def show_toast(message, color="#4caf50"):
 
 def git_sync(on_done, status_lbl, btn_ref):
     status_lbl.config(text="Pushing to GitHub...", fg="#f0a500")
-    result = subprocess.run(
-        "cd ~/dotfiles && git add base.yml && git commit -m 'update snippets' && git push",
-        shell=True, capture_output=True, text=True
-    )
+    dotfiles = os.path.expanduser("~/dotfiles")
+    if IS_WINDOWS:
+        cmd = f'cd /d "{dotfiles}" && git pull && git add base.yml && git commit -m "update snippets" && git push'
+        restart_cmd = "espanso restart"
+    else:
+        cmd = f"cd '{dotfiles}' && git pull && git add base.yml && git commit -m 'update snippets' && git push"
+        restart_cmd = "sleep 1 && espanso restart"
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     if result.returncode == 0:
-        subprocess.Popen("sleep 1 && espanso restart", shell=True,
-                         start_new_session=True,
+        subprocess.Popen(restart_cmd, shell=True, start_new_session=True,
                          stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         root.after(0, lambda: on_done(True, btn_ref, status_lbl))
     else:
