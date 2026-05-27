@@ -35,11 +35,11 @@ Follow the prompts. The only manual step is adding the SSH key to GitHub when it
 
 ## Daily use
 
-### Adding or editing snippets
-- **Linux:** run `espanso-add` in a terminal
+### Opening the snippet manager
+- **Linux:** run `espanso-manager` in a terminal
 - **Windows:** double-click `Espanso Manager` on the desktop
 
-The app lets you add, edit, and delete snippets. It automatically pushes to GitHub and restarts espanso when you're done.
+The app lets you add, edit, and delete snippets. It automatically pulls the latest from GitHub, pushes your changes, and restarts espanso when you're done.
 
 ### Syncing manually
 If you edited `base.yml` directly and want to push:
@@ -77,7 +77,7 @@ base.yml in ~/dotfiles  ←──── GitHub repo ────→  base.yml in
 - `base.yml` lives in `~/dotfiles` and is synced via GitHub
 - A symlink points espanso to that file instead of its own config folder
 - On boot, a systemd service (Linux) or Task Scheduler job (Windows) runs `git pull` to get the latest version
-- The GUI app writes directly to `~/dotfiles/base.yml`, pushes to GitHub, and restarts espanso
+- The manager app pulls before pushing so it's always in sync, even right after boot
 
 ---
 
@@ -105,7 +105,7 @@ matches:
 rm ~/.config/espanso/match/base.yml
 ln -s ~/dotfiles/base.yml ~/.config/espanso/match/base.yml
 ```
-The systemd service auto-repairs this on every boot/restart, so it'll fix itself automatically.
+The systemd service auto-repairs this on every boot/restart so it fixes itself automatically.
 
 **Git push rejected**
 Someone pushed changes you don't have locally. Pull first:
@@ -125,4 +125,6 @@ espanso restart
 ```
 
 **Stray characters when a snippet fires**
-Make sure `backend: Clipboard` is set in `~/.config/espanso/config/default.yml` (Linux) or `%APPDATA%\espanso\config\default.yml` (Windows).
+Make sure `backend: Clipboard` is set in:
+- Linux: `~/.config/espanso/config/default.yml`
+- Windows: `%APPDATA%\espanso\config\default.yml`
