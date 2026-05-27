@@ -23,3 +23,5 @@ matches:
   replace: DAMM021224HTSRNRA2
 - trigger: RFC
   replace: DAMM021224DK0
+- trigger: ::n
+  replace: ñ
